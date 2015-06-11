@@ -1,3 +1,4 @@
+"use strict";
 // Set bounce animation speed
 var bounceSpeed = 7;
 
@@ -36,7 +37,9 @@ var Bouncer = function(elem) {
     }
   });
 
+  // debugger;
   // make it bounce
+  console.log(this);
   var self = this;
   this.init(self);
   this.bounce(self);
@@ -69,6 +72,7 @@ Bouncer.prototype.init = function(self) {
 
 Bouncer.prototype.bounce = function(self) {
   // ball animation incrementing delay
+  var self = this;
   var incrementingDelay = 0;
 
   // run through the text
@@ -126,10 +130,11 @@ Bouncer.prototype.bounce = function(self) {
         $('#artist').css("background-image", "url(https://unsplash.it/2500/1600?random)");
       }
 
-      var tweets = ["I Saw Owen Wilson One Time From A Distance And We Just Stared At Each Other, Then His Car Drove Off.", "I Really Dislike When All The Pretty Girls Hangout At Once • • • #CauseImNeverThere", "Yeah Your Girl Is Bad But She Doesn't Smile.","I Would Like To Remind You Guys That I Designed My Very Own Musical App Platform And Released My Debut Album For Free.", "When You Stop Texting Her Cause You Like Her Too Much.","Yeah Whatever Your Still Not As Cool As North.", "Instagram Is A BlackHole Of Time And Energy.","Just Finished Building My New Bed.", "That Moment When Your Wearing A Dress With No Pants And You Swerve Way To Hard.","That Moment When You Can't Sleep Soo You Start Doing Math.", "When Life Gives You Big Problems, Just Be Happy You Forgot All Your Little Problems.","That Moment When Peeing Feels So Good You Start Crying.", "Just Stare In The Mirror And Cry And You'll Be Good. 👍","A Little Girl Just Asked Me If I Was Willow Smith I Humbly Said Yes And Took A Selfie.", "Yeah Yeah, But How Many Pull Ups Can You Do.", "The More Time You Spend Awake The More Time You Spend Asleep.", "Relationships Are Messed Up But Your Face Isn't.", "I Don't Smell Good, But I Don't Smell Bad You Feel Me.","It's Okay To Cry Guys.", "I'm To Emotional For All That Relationship Stuff.","Don't Worry Bae I'll Talk To You About SpaceTime Over FaceTime.", "I Just Like Showing Pretty Girls A Good Time Weather I'm Physically There Or Not Doesn't  Matter.","I'm Glad That Our Distance Makes Us Witness Ourselves From A Different Entrance.", "Female Energy","Haters Are Just Pre Creators Who Need The Seed Of Greatness.", "When She's So Fine That You See A Picture And Immediately Start Doing Push Up."]
+      var tweets = ["Most Trees Are Blue", "How Can Mirrors Be Real If Our Eyes Aren't Real", "Yeah Your Girl Is Bad But She Doesn't Smile.","The Great Gatsby Is One Of The Greatest Movies Of All Time, Coachella.", "When You Stop Texting Her Cause You Like Her Too Much.","Yeah Whatever Your Still Not As Cool As North.", "Instagram Is A BlackHole Of Time And Energy.","Just Finished Building My New Bed.", "Either I Lie To You Or We Cry Together","That Moment When You Can't Sleep Soo You Start Doing Math.", "When Life Gives You Big Problems, Just Be Happy You Forgot All Your Little Problems.","That Moment When Peeing Feels So Good You Start Crying.", "Just Stare In The Mirror And Cry And You'll Be Good. 👍","A Little Girl Just Asked Me If I Was Willow Smith I Humbly Said Yes And Took A Selfie.", "Yeah Yeah, But How Many Pull Ups Can You Do.", "The More Time You Spend Awake The More Time You Spend Asleep.", "Relationships Are Messed Up But Your Face Isn't.", "I Don't Smell Good, But I Don't Smell Bad You Feel Me.","It's Okay To Cry Guys.", "I'm To Emotional For All That Relationship Stuff.","Don't Worry Bae I'll Talk To You About SpaceTime Over FaceTime.", "I Just Like Showing Pretty Girls A Good Time Weather I'm Physically There Or Not Doesn't  Matter.","I'm Glad That Our Distance Makes Us Witness Ourselves From A Different Entrance.", "Female Energy","Haters Are Just Pre Creators Who Need The Seed Of Greatness.", "When She's So Fine That You See A Picture And Immediately Start Doing Push Up.", "I Build Pyramids Constantly"]
 
-      for (i = 0; i <4; i++) {
+      for (var i = 0; i <4; i++) {
         var random = tweets[Math.floor(Math.random()*tweets.length)]
+        // debugger;
         $('#bouncer-text').text(random);
         self.reset();
         self.init();
