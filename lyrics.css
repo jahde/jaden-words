@@ -1,0 +1,97 @@
+@import "compass/css3";
+
+.ball {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #FF0066;
+  margin-left: -5px;
+  transition-property: left, top;
+  transition-timing-function: cubic-bezier(.25,.1,.25,1), cubic-bezier(.25,.1,.25,1);
+}
+
+p {
+  position: relative;
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+  font-size: 40px;
+  outline: none;
+}
+
+.word.lit {
+  color: #FF0066;
+  text-shadow: 0px 0px 3px #FF0066;
+}
+
+.container {
+  width: 1280px;
+  height: 500px;
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+}
+
+.light-switch {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 50px;
+  color: #aaa;
+  cursor: pointer;
+
+  &:hover {
+      color: #999;
+    }
+}
+
+.hint {
+  width: 350px;
+  height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  background: #ddd;
+  color: #666;
+  position: absolute;
+  left: 50%;
+  top: -30px;
+  margin-left: -175px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  cursor: default;
+
+  &:not(.preload) {
+    transition: top 1s;
+  }
+
+  &.open {
+    top: 0px;
+  }
+
+  & > i {
+    margin: 0 5px;
+    background: #ccc;
+    color: #222;
+    border-radius: 100%;
+    display: inline-block;
+    line-height: 17px;
+    width: 17px;
+    height: 17px;
+  }
+}
+
+body {
+  background: #eee;
+  background-image: url("https://unsplash.it/2500/1600?random");
+  color: #222;
+  font-family: 'Alef', sans-serif;
+  padding-top: 100px;
+
+  &.dark {
+    background: #222;
+  }
+}
